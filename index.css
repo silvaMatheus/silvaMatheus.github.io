@@ -11,9 +11,5 @@ body{
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-}
-
-.texto-glitch{
-  position: absolute;
-   transform: translate(-50%, -50%);
+  background: black;
 }
