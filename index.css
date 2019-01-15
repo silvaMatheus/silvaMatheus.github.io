@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
+
+body{
+  background: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.texto-glitch{
+  position: absolute;
+   transform: translate(-50%, -50%);
+}
