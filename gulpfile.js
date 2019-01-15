@@ -4,6 +4,7 @@ var gulp = require('gulp'); // Chamando o Gulp
 
 
 var sass = require('gulp-sass');
+var watch = require('gulp-watch');
 
 //Tasks  para o sass
 
@@ -12,6 +13,12 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
       .pipe(gulp.dest('css'));
 });
+
+//task para o watch
+	gulp.task('watch', function () {
+    console.log("funcionando");
+   	gulp.watch('sass/*.scss', ['sass']);
+	});
 
 gulp.task('default', function(){
 
