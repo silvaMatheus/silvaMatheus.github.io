@@ -2,19 +2,20 @@
 // I just like my eye candy.
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100');
 
-
-html, body, h1 {
+html, body {
+	height: 100vh;
+	width: 100vw;
 	padding: 0;
 	margin: 0;
 	font-family: 'Montserrat', sans-serif;
-
-
+	font-size:1,5em;
 }
 
 #app {
+
 	background: rgb(10,10,10);
 	height: 100vh;
-	width: 100%;
+	width: 100vw;
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -24,22 +25,6 @@ html, body, h1 {
 	z-index: 5;
 }
 
-.container-sociais{
-	margin: 50px;
-	width: 50%;
-
-	display: flex;
-	justify-content: center;
-	font-size: 2em;
-
-}
-li{
-	list-style: none;
-}
-li a{
-	color:white;
-	margin: 20px;
-}
 #wrapper {
 	 text-align: center;
 }
@@ -47,9 +32,7 @@ li a{
 .sub {
 	color: rgb(100,220,220);
 	letter-spacing: 1em;
-
-
-	font-size: 0.9em;
+	font-size:10px;
 }
 
 @mixin glitchCopy {
@@ -64,23 +47,13 @@ li a{
 .glitch {
 	position: relative;
 	color: white;
-	    font-size: 4em;
-margin-bottom: 20px;
 	letter-spacing: .5em;
-
 	animation: glitch-skew 1s infinite linear alternate-reverse;
-
-
 	&::before{
-
 		@include glitchCopy;
-
 		left: 2px;
-
 		text-shadow: -2px 0 #ff00c1;
-
 		clip: rect(44px, 450px, 56px, 0);
-
 		animation: glitch-anim 5s infinite linear alternate-reverse;
 	}
 
@@ -91,6 +64,23 @@ margin-bottom: 20px;
 		animation: glitch-anim2 1s infinite linear alternate-reverse;
 	}
 }
+li{
+	list-style: none;
+}
+li a{
+	color:white;
+	margin: 20px;
+}
+
+.container-sociais{
+	margin: 50px;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+}
+
+
 
 @keyframes glitch-anim {
   $steps: 20;
