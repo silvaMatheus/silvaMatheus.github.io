@@ -69,28 +69,11 @@ html {
 #control:checked ~ .container-hambuguer_spans span:nth-child(3) {
 	transform: translateY(3px) rotate(45deg)translateX(0px);
 }
-@keyframes menuMo {
-	from {
-		float: right;
-	}
-
-	to {
-		float: left;
-	}
-}
-@keyframes menu-skew {
-	$steps: 10;
-	@for $i from 0 through $steps {
-		#{percentage($i*(1/$steps))} {
-			transform: skew((random(80) - 20) + deg);
-		}
-	}
-}
 
 .nav {
-	top:0;
+	top: 0;
 	position: absolute;
-font-weight: bold;
+	font-weight: bold;
 	right: 0;
 	background: black;
 	display: flex;
@@ -115,10 +98,11 @@ font-weight: bold;
 	}
 
 	a {
-	text-decoration: none;
-	color: white;
+		text-decoration: none;
+		color: white;
 	}
-	a:hover{
+
+	a:hover {
 		animation: neon2 1.5s ease-in-out infinite alternate;
 		color: rgb(100,220,220);
 	}
@@ -238,14 +222,5 @@ font-weight: bold;
 
 	to {
 		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
-	}
-}
-@menu {
-	from {
-		top: -500px;
-	}
-
-	to {
-		top: 0;
 	}
 }
