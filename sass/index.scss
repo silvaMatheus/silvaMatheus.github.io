@@ -103,7 +103,6 @@ html {
 	}
 
 	a:hover {
-		animation: neon2 1.5s ease-in-out infinite alternate;
 		color: rgb(100,220,220);
 	}
 	// display: flex;
@@ -141,6 +140,7 @@ html {
 	height: 100vh;
 	background: black;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
@@ -151,12 +151,13 @@ html {
 	}
 
 	span {
-		-webkit-animation: neon2 1.5s ease-in-out infinite alternate;
-		-moz-animation: neon2 1.5s ease-in-out infinite alternate;
-		animation: neon2 1.5s ease-in-out infinite alternate;
 		color: rgb(100,220,220);
 		letter-spacing: 2px;
 		font-size: 15px;
+	}
+
+	i {
+		color: white;
 	}
 }
 @mixin glitchCopy {
@@ -189,38 +190,32 @@ html {
 		animation: glitch-anim2 1s infinite linear alternate-reverse;
 	}
 }
-@keyframes glitch-anim {
-	$steps: 20;
-	@for $i from 0 through $steps {
-		#{percentage($i*(1/$steps))} {
-			clip: rect(random(100)+px, 9999px, random(100)+px, 0);
-			transform: skew((random(100) / 100) + deg);
-		}
-	}
-}
-@keyframes glitch-anim2 {
-	$steps: 20;
-	@for $i from 0 through $steps {
-		#{percentage($i*(1/$steps))} {
-			clip: rect(random(100)+px, 9999px, random(100)+px, 0);
-			transform: skew((random(100) / 100) + deg);
-		}
-	}
-}
-@keyframes glitch-skew {
-	$steps: 10;
-	@for $i from 0 through $steps {
-		#{percentage($i*(1/$steps))} {
-			transform: skew((random(10) - 5) + deg);
-		}
-	}
-}
-@-webkit-keyframes neon2 {
-	from {
-		text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
-	}
 
-	to {
-		text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
-	}
+.arrow {
+	position: relative;
+	top: 280%;
+	left: 100%;
+	transform: translate(-50%, -50%);
 }
+
+.arrow span {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-bottom: 2px solid rgb(100,220,220);
+	border-right: 2px solid rgb(100,220,220);
+	transform: rotate(45deg);
+	margin: -12px;
+	animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+	animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+	animation-delay: -0.4s;
+}
+
+@import 'keyframes';
+@import 'about';
