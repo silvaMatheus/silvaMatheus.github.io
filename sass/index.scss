@@ -14,13 +14,11 @@ html {
 	overflow-x: hidden;
 	background: black;
 }
-
 .header {
 	right: 0;
 	z-index: 999999;
 	position: fixed;
 }
-
 .menu-icon {
 	float: right;
 	margin: 20px 10px 0 0;
@@ -31,7 +29,6 @@ html {
 	left: 50px;
 	top: 30px;
 	cursor: pointer;
-
 	&__line {
 		height: 3px;
 		width: $size;
@@ -139,7 +136,7 @@ html {
 
 .home__container {
 	height: 100vh;
-	background: black;
+	background:black;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
