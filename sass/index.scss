@@ -1,183 +1,59 @@
+// Ignore all of this, scroll down until you see the next comment.
+// I just like my eye candy.
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100');
-$font: 'Montserrat', sans-serif;
-$blue: #64DCDC;
-$font--color: #ffffff;
 
-body,
-html {
+html, body {
 	height: 100vh;
 	width: 100vw;
 	padding: 0;
 	margin: 0;
-	font-family: $font;
-	font-size: 1,5em;
-	overflow-x: hidden;
-	background: black;
-}
-.header {
-	right: 0;
-	z-index: 999999;
-	position: fixed;
-}
-.menu-icon {
-	float: right;
-	margin: 20px 10px 0 0;
-	$size: 30px;
-	height: $size;
-	width: $size;
-	z-index: 9999;
-	left: 50px;
-	top: 30px;
-	cursor: pointer;
-	&__line {
-		height: 3px;
-		width: $size;
-		display: block;
-		background-color: $font--color;
-		margin-bottom: 4px;
-		transition: all 0.3s ease;
-	}
-
-	&__line-left {
-		transition: all 0.3s ease;
-		height: 3px;
-		width: $size / 2;
-	}
-
-	&__line-right {
-		width: $size / 2;
-		float: right;
-		transition: all 0.3s ease;
-	}
+	font-family: 'Montserrat', sans-serif;
+	font-size:1,5em;
 }
 
-#control {
-	display: none;
-}
+#app {
 
-#control:checked ~ .container-hambuguer_spans span:nth-child(1) {
-	transform: translateY(-1px) rotate(45deg) translatex(2px);
-}
-
-#control:checked ~ .container-hambuguer_spans span:nth-child(2) {
-	transform: translateY(1px) rotate(-45deg);
-	width: 32px;
-}
-
-#control:checked ~ .container-hambuguer_spans span:nth-child(3) {
-	transform: translateY(3px) rotate(45deg)translateX(0px);
-}
-
-.nav {
-	top: 0;
-	position: absolute;
-	font-weight: bold;
-	right: 0;
-	background: black;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	background: rgb(10,10,10);
 	height: 100vh;
-	width: 50vw;
-	z-index: -2;
-	transform: translateX(100%);
-	transition: all 0.4s ease-out;
-
-	ul {
-		padding: 0;
-		margin-top: -20px;
-		text-align: center;
-		text-decoration: none;
-		list-style: none;
-	}
-
-	li {
-		margin-top: 20px;
-	}
-
-	a {
-		text-decoration: none;
-		color: white;
-	}
-
-	a:hover {
-		color: rgb(100,220,220);
-	}
-	// display: flex;
-	//
-	// text-align: center;
-	// position: fixed;
-	// height: 100%;
-	// width: 100vw;
-	// justify-content: center;
-	// flex-direction: column;
-	// align-items: center;
-	// background: black;
-	// font-weight: bold;
-	// color: rgb(100,220,220);
-	// font-size: calc(4vw + 10px);
-	// transition: all 0.4 ease-out;
-}
-
-#control:checked ~ #nav {
-	transform: translateY(0%);
-}
-
-.nav__social {
-	display: flex;
-	justify-content: center;
-
-	a {
-		font-size: 20px;
-		margin: 10px;
-		color: white;
-	}
-}
-
-.home__container {
-	height: 100vh;
-	background:black;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
-
-	h1 {
-		margin: 0;
-		font-size: 30px;
-	}
-
-	span {
-		color: rgb(100,220,220);
-		letter-spacing: 2px;
-		font-size: 15px;
-	}
-
-	i {
-		color: white;
-	}
+	z-index: 5;
 }
+
+#wrapper {
+	 text-align: center;
+}
+
+.sub {
+	color: rgb(100,220,220);
+	letter-spacing: 1em;
+	font-size:10px;
+}
+
 @mixin glitchCopy {
-	content: attr(data-text);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+		content: attr(data-text);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 }
 
-.effect-glitch {
+.glitch {
 	position: relative;
 	color: white;
-	letter-spacing: 0.5em;
+	letter-spacing: .5em;
 	animation: glitch-skew 1s infinite linear alternate-reverse;
-
-	&::before {
+	&::before{
 		@include glitchCopy;
 		left: 2px;
 		text-shadow: -2px 0 #ff00c1;
-		clip: rect(104px, 10000px, 56px, 0);
+		clip: rect(44px, 450px, 56px, 0);
 		animation: glitch-anim 5s infinite linear alternate-reverse;
 	}
 
@@ -188,34 +64,49 @@ html {
 		animation: glitch-anim2 1s infinite linear alternate-reverse;
 	}
 }
-
-.arrow {
-	position: relative;
-	top: 250%;
-	left:100%;
-	transform: translate(-50%, -50%);
+li{
+	list-style: none;
+}
+li a{
+	color:white;
+	margin: 20px;
 }
 
-.arrow span {
-	display: block;
-	width: 20px;
-	height: 20px;
-	border-bottom: 2px solid rgb(100,220,220);
-	border-right: 2px solid rgb(100,220,220);
-	transform: rotate(45deg);
-	margin: -12px;
-	animation: animate 2s infinite;
+.container-sociais{
+	margin: 50px;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
 }
 
-.arrow span:nth-child(2) {
-	animation-delay: -0.2s;
+
+
+@keyframes glitch-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+			transform: skew((random(100) / 100) + deg);
+    }
+  }
 }
 
-.arrow span:nth-child(3) {
-	animation-delay: -0.4s;
+@keyframes glitch-anim2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+			transform: skew((random(100) / 100) + deg);
+    }
+  }
 }
 
-@import 'keyframes';
-@import 'about';
-@import 'myWorks';
-@import 'contacts';
+@keyframes glitch-skew {
+  $steps: 10;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      transform: skew((random(10) - 5) + deg);
+    }
+  }
+}
